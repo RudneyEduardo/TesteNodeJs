@@ -1,0 +1,35 @@
+{
+  "name": "testenodejs",
+  "version": "1.0.0",
+  "description": "Node CEP Api Processor",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RudneyEduardo/TesteNodeJs.git"
+  },
+  "keywords": [
+    "Node",
+    "CEP"
+  ],
+  "type": "module",
+  "author": "Rudney Vieira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RudneyEduardo/TesteNodeJs/issues"
+  },
+  "homepage": "https://github.com/RudneyEduardo/TesteNodeJs#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.33",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.6.4"
+  }
+}
