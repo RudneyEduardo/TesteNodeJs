@@ -22,8 +22,5 @@ export const cepController = async (req, res) => {
     }else{
         res.json(myCache.get('allCeps'))
     }
-    
-
-
 }
 
