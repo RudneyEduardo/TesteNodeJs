@@ -1,12 +1,13 @@
-import 'dotenv/config'
-import express from 'express'
-import cep from '../routes/cep.js'
-import auth from '../routes/auth.js'
-import swaggerUiExpress from 'swagger-ui-express'
-import swaggerJsdoc from 'swagger-jsdoc'
+import 'dotenv/config';
+import express from 'express';
+import cep from '../routes/cep.js';
+import auth from '../routes/auth.js';
+import swaggerUiExpress from 'swagger-ui-express';
+import swaggerJsdoc from 'swagger-jsdoc';
 
 
 const app = express()
+
 
 app.use(express.json())
 
