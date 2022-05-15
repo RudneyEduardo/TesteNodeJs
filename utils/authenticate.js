@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-
 /**
  * AuthenticateToken
  * * This Function takes the req, res and callback function
