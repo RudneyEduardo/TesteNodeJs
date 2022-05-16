@@ -15,9 +15,12 @@ export const cepController = async (req, res) => {
                     res.json(viaCepRes.data)
                     myCache.set('allCeps', viaCepRes.data, 300)
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    console.log("yey")
+                    res.send(403, { error: "Algo de errado na plataforma Via cep"})
+                })
         } else {
-            res.sendStatus(400)
+            res.send(403, { error: "O Cep não está no formato xxxxxxxxx"})
         }
     }else{
         res.json(myCache.get('allCeps'))

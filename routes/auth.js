@@ -4,6 +4,7 @@ const router = Router()
 
 import { authController } from '../controllers/authController.js'
 
+
 /**
  * @swagger
  * components:
