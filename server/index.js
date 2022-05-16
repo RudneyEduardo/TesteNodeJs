@@ -1,39 +1,46 @@
-import 'dotenv/config'
-import express from 'express'
-
-import jwt from 'jsonwebtoken';
-
-import { authenticateToken } from '../middleware/authenticate.js'
+import 'dotenv/config';
+import express from 'express';
+import cep from '../routes/cep.js';
+import auth from '../routes/auth.js';
+import swaggerUiExpress from 'swagger-ui-express';
+import swaggerJsdoc from 'swagger-jsdoc';
 
 
 const app = express()
 
+
 app.use(express.json())
 
-const posts = [
-    {
-        username:'kat',
-        title:'post 1'
-    },
-    {
-        username:'bet',
-        title:'post 2'
-    }
-]
+const options = {
+	definition: {
+		openapi: "3.0.0",
+		info: {
+			title: "Library API",
+			version: "1.0.0",
+			description: "A simple Express Library API",
+		},
+		servers: [
+			{
+				url: "http://localhost:3000",
+			},
+		],
+	},
+	apis: ["./routes/*.js"],
+};
+
+const specs = swaggerJsdoc(options);
 
 
-app.get('/posts', authenticateToken, (req, res) => {
-    res.json(posts.filter(post =>  post.username === req.user.name))
-})
-
-app.post('/login', (req, res) => {
-    const username = req.body.username
-    const user = {name: username}
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    res.json({accessToken: accessToken})
-})
+//*Swagger
+app.use("/api-docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
 
+//*Auth route
+app.use('/auth', auth)
+
+
+//*CEP Consult Route
+app.use('/cep', cep)
 
 
 app.listen(3000)
