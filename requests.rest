@@ -1,14 +1,13 @@
-GET http://localhost:3000/posts
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2F0IiwiaWF0IjoxNjUyNjM2MDQwfQ.nicd3COCzuuH_z-8NRkOkU7G0L-zVqMjkXE8-0JAMK0
+POST http://localhost:3000/auth
+
+Content-Type: application/json
+
 {
-    "cep":07040030
+    "username": "teste",
+    "password": "teste"
 }
 
 ###
 
-POST http://localhost:3000/login
-Content-Type: application/json
-
-{
-    "username": "kat"
-}
+GET http://localhost:3000/cep/07040030
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTI2NjM5MjJ9.ExLOi45R71k3BRfGxaavz-JIuYVOXqhahDuJGKyQl28
