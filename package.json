@@ -4,7 +4,7 @@
   "description": "Node CEP Api Processor",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon ./server"
+    "start": "nodemon ./server"
   },
   "repository": {
     "type": "git",
