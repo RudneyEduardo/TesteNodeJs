@@ -11,7 +11,7 @@ export const authenticateToken = (req, res, next) => {
     if(token === null) return res.sendStatus(401)
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if(err) return res.send(403, {error: "Token de Acesso Inválido"})
+        if(err) return res.status(403).send({error: "Token de Acesso Inválido"})
         req.user = user
         next()
     })
