@@ -48,6 +48,6 @@ import { cepController } from '../controllers/CepController.js'
  *                 $ref: '#/components/schemas/Cep'
  */
 
-router.get('/:cep', authenticateToken, cepController)
+router.post('/:cep', authenticateToken, cepController)
 
 export default router
