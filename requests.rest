@@ -9,5 +9,5 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/cep/07040030
+POST http://localhost:3000/cep/07040030
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTI2NjM5MjJ9.ExLOi45R71k3BRfGxaavz-JIuYVOXqhahDuJGKyQl28
